@@ -2,8 +2,13 @@ import React, { Component } from "react";
 import classes from "./App.css";
 import Persons from "./components/Persons/Persons"
 import Cockpit from './components/Cockpit/Cockpit'
-import { ThemeConsumer } from "styled-components";
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor')
+  }
+
   state = {
     persons: [
       { name: "Rick", age: 109, id: '2ass6s' },
@@ -12,6 +17,24 @@ class App extends Component {
     ],
     showPersons: false
   };
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props)
+    return state
+  }
+  
+  componentDidMount() {
+    console.log('[App.js] componentDidMount')
+  }
+  
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] componentDidUpdate')
+    return true
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate')
+  }
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -45,6 +68,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] render')
     let persons = null;
 
     if (this.state.showPersons) {
@@ -61,8 +85,9 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Cockpit
+        title={this.props.appTitle}
         showPersons={this.state.showPersons}
-        persons={this.state.persons}
+        personsLength={this.state.persons.length}
         clicked={this.togglePersonsHandler} />
         {persons}
       </div>

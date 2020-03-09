@@ -1,33 +1,3 @@
 .App {
     text-align: center;
 }
-
-.red {
-    color: red;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.cockpit button {
-    background-color: green;
-    color: white;
-    font: inherit;
-    border: 1px solid blue;
-    border-radius: 2px;
-    padding: .5rem;
-    cursor: pointer;
-}
-
-.cockpit button:hover {
-    background-color: lightgreen;
-}
-
-.cockpit button.red {
-    background-color: red;
-}
-
-.cockpit button.red:hover {
-    background-color: salmon;
-}
