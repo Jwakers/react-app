@@ -10,8 +10,8 @@
     font-weight: bold;
 }
 
-.button {
-    background-color: 'green';
+.cockpit button {
+    background-color: green;
     color: white;
     font: inherit;
     border: 1px solid blue;
@@ -20,6 +20,14 @@
     cursor: pointer;
 }
 
-button:hover {
-    background-color: 'lightgreen';
+.cockpit button:hover {
+    background-color: lightgreen;
+}
+
+.cockpit button.red {
+    background-color: red;
+}
+
+.cockpit button.red:hover {
+    background-color: salmon;
 }
