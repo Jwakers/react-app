@@ -1,4 +1,4 @@
-.person {
+.Person {
     position: relative;
     width: 60%;
     margin: 1rem auto;
@@ -8,7 +8,7 @@
 }
 
 @media (min-width: 500px) {
-    .person {
+    .Person {
         width: 450px;
     }
 }
